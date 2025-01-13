@@ -6,14 +6,14 @@ import java.io.IOException;
 
 public class Ulam {
     static int maxn = 100000; // Adjust this value for testing purposes
-    static int[] a = new int[maxn + 1]; // list of ulam numbers
-    static int[] nx = new int[maxn + 1]; // next when ordered by residue
-    static int[] pv = new int[maxn + 1]; // previous when ordered by residue
-    static int[] k = new int[maxn / 2]; // true for ulam numbers (packed bits)
+    static int[] a = new int[maxn + 1]; 
+    static int[] nx = new int[maxn + 1];
+    static int[] pv = new int[maxn + 1]; 
+    static int[] k = new int[maxn / 2]; 
     static int nindex = maxn / 100;
     static int[] index = new int[nindex];
-    static int nbin = 12000; // bin Ulam numbers by residue
-    static int[] bins = new int[nbin]; // should be multiple of 3 to separate outliers
+    static int nbin = 12000; 
+    static int[] bins = new int[nbin]; 
     static long kk1 = 0;
     static long kk2 = 0;
     static long kk3 = 0;
@@ -36,9 +36,9 @@ public class Ulam {
         for (int i = 0; i < nindex; i++) {
             index[i] = 0;
         }
-        pv[0] = 0; // index to number with largest residue
-        nx[0] = 0; // index to number with smallest residue
-        setUlam(0, 0); // not really an ulam number
+        pv[0] = 0; 
+        nx[0] = 0; 
+        setUlam(0, 0);
         setUlam(1, 1);
         setlinks(1);
         setUlam(2, 2);
@@ -48,14 +48,14 @@ public class Ulam {
         int nor = 0;
         long bestgap = 0;
         for (long a0 = 3; n < maxn; a0++) {
-            // search for a sum in residue order from both ends
+          
             double rd0 = mod(a0, lamda) / lamda;
             boolean more = true;
             int kount2 = 0;
             long a1x = 0;
             boolean ulam = false;
-            if (rd0 < 0.24 || rd0 > 0.80) { // to mind the gap use the brute search
-                int j = n; // better to start from larger end
+            if (rd0 < 0.24 || rd0 > 0.80) { 
+                int j = n; 
                 long aj = getUlam(j);
                 while (more && 2 * aj > a0) {
                     kount2++;
@@ -77,28 +77,28 @@ public class Ulam {
                 more = false;
             }
             int kount0 = 0;
-            int i = nx[0]; // start with smallest residue
+            int i = nx[0]; 
             long ai = getUlam(i);
             double rdi = mod(ai, lamda) / lamda;
             while (2 * rdi <= rd0 + 0.0002 && more && i != 0) {
                 kount0++;
                 long a2 = a0 - ai;
                 kk1++;
-                if (isUlam(a2) && ai != a2 && a2 != a1x) { // pair adds up
-                    if (ulam) { // already had a sum
-                        more = false; // found two so can stop
+                if (isUlam(a2) && ai != a2 && a2 != a1x) { 
+                    if (ulam) { 
+                        more = false; 
                         ulam = false;
-                    } else { // otherwise note first sum
+                    } else { 
                         ulam = true;
-                        a1x = ai; // note this to check against double counting
+                        a1x = ai; 
                     }
                 }
-                i = nx[i]; // jump to next smallest residue
+                i = nx[i]; 
                 ai = getUlam(i);
                 rdi = mod(ai, lamda) / lamda;
             }
             int kount1 = 0;
-            i = pv[0]; // now work back from the largest residue
+            i = pv[0]; 
             ai = getUlam(i);
             rdi = mod(ai, lamda) / lamda;
             while (2 * (1.0 - rdi) <= (1.0 - rd0) + 0.0002 && more && i != 0) {
@@ -106,15 +106,15 @@ public class Ulam {
                 long a2 = a0 - ai;
                 kk2++;
                 if (isUlam(a2) && ai != a2 && a2 != a1x) { // pair adds up
-                    if (ulam) { // already had a sum
-                        more = false; // found two so can stop
+                    if (ulam) { 
+                        more = false;
                         ulam = false;
-                    } else { // otherwise note first sum
+                    } else { 
                         ulam = true;
-                        a1x = ai; // note this to check against double counting
+                        a1x = ai; 
                     }
                 }
-                i = pv[i]; // jump to next largest residue
+                i = pv[i]; 
                 ai = getUlam(i);
                 rdi = mod(ai, lamda) / lamda;
             }
@@ -155,13 +155,13 @@ public class Ulam {
                 bins[ibin]++;
             }
         }
-        //System.out.println("a[" + n + "] = " + getUlam(n));
+       
        // System.out.println("biggest gap was " + bestgap);
         double density = ((double) n) / ((double) getUlam(n));
         System.out.println("density = " + density);
         System.out.println("step = " + (1.0 / density));
         System.out.println("");
-        //System.out.println("bin frequencies:");
+      
         for (int ibin = 0; ibin < nbin; ibin++) {
             System.out.println(ibin + "," + bins[ibin]);
         }
@@ -196,8 +196,6 @@ public class Ulam {
     }
 
     public static void setlinks(int n) {
-        // set the next and previous links in ordering by residue
-        // use an index to find a starting point with a lower residue
         double rdn = mod(getUlam(n), lamda) / lamda;
         int j = (int) (nindex * rdn);
         int pvi = index[j];
@@ -262,7 +260,7 @@ public class Ulam {
         int d30 = (int) (a0 / i30);
 
         if (m30 < 0) {
-           m30 += 30; // Make the index positive
+           m30 += 30; 
         }
 
         boolean ulam = ((k[d30] & pow2[m30]) > 0);

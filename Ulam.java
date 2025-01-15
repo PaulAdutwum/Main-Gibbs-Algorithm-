@@ -142,7 +142,7 @@ public class Ulam {
                 }
                 if (n % 1000000 == 0) {
                     System.out.println("a[" + n + "] = " + a0 + " = " + a1x + " + " + (a0 - a1x));
-                    //System.err.println("a[" + n + "] = " + a0 + " = " + a1x + " + " + (a0 - a1x));
+                   
                 }
                 long a1 = getUlam(n - 1);
                 long gap = a0 - a1;

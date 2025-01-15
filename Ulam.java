@@ -156,7 +156,7 @@ public class Ulam {
             }
         }
        
-       // System.out.println("biggest gap was " + bestgap);
+      
         double density = ((double) n) / ((double) getUlam(n));
         System.out.println("density = " + density);
         System.out.println("step = " + (1.0 / density));

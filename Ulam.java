@@ -105,7 +105,7 @@ public class Ulam {
                 kount1++;
                 long a2 = a0 - ai;
                 kk2++;
-                if (isUlam(a2) && ai != a2 && a2 != a1x) { // pair adds up
+                if (isUlam(a2) && ai != a2 && a2 != a1x) { 
                     if (ulam) { 
                         more = false;
                         ulam = false;

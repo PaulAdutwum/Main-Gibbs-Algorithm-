@@ -63,7 +63,7 @@ public class Ulam {
                     long a2 = a0 - a1;
                     kk3++;
                     if (isUlam(a2)) {
-                        if (ulam) { // found more than one sum
+                        if (ulam) { 
                             ulam = false;
                             more = false;
                         } else {
@@ -137,7 +137,7 @@ public class Ulam {
                 if (z > 2.0 / 3.0 || z < 1.0 / 3.0) {
                     lamdarun = (lamdarun * 9.0 + p) / 10.0;
                     // System.out.println(nor+" "+nol+" "+n+" "+a0+" "+z+" "+p+" "+lamdarun);
-                   // System.err.println(n + " " + a0 + " kk: " + (kk1 / a0) + " " + (kk2 / a0) + " " +
+                   
                           //  (kk3 / a0) + " " + (kk4 / a0) + " " + (kk5 / a0));
                 }
                 if (n % 1000000 == 0) {

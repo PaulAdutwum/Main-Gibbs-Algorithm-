@@ -5,7 +5,7 @@ import java.io.IOException;
 
 
 public class Ulam {
-    static int maxn = 100000; // Adjust this value for testing purposes
+    static int maxn = 100000; 
     static int[] a = new int[maxn + 1]; 
     static int[] nx = new int[maxn + 1];
     static int[] pv = new int[maxn + 1]; 

@@ -171,7 +171,7 @@ public class Ulam {
         try {
             PrintWriter writer = new PrintWriter("Ulam_output.txt");
             for (Long ulamNumber : ulamNumbers) {
-                writer.println(ulamNumber);  // This ensures each number is on a new line
+                writer.println(ulamNumber);  
             }
             writer.close();
         } catch (IOException e) {
@@ -181,7 +181,7 @@ public class Ulam {
 
         // Print Ulam numbers
         System.out.println("First " + maxn + " Ulam numbers:");
-        //System.out.println(ulamNumbers);
+        
     }
 
 
@@ -249,7 +249,7 @@ public class Ulam {
         System.err.println("links check complete");
     }
 
-    // booleans flagging the ulam numbers are packed to save space
+  
     static int[] pow2 = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768,
             1 << 16, 1 << 17, 1 << 18, 1 << 19, 1 << 20, 1 << 21, 1 << 22,
             1 << 23, 1 << 24, 1 << 25, 1 << 26, 1 << 27, 1 << 28, 1 << 29};

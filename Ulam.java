@@ -287,6 +287,8 @@ public class Ulam {
         return a0;
     }
 
+
+    
     public static void initUlam() {
         Arrays.fill(k, 0);
         Arrays.fill(bins, 0);

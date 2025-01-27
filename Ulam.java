@@ -195,6 +195,8 @@ public class Ulam {
         return z;
     }
 
+    
+
     public static void setlinks(int n) {
         double rdn = mod(getUlam(n), lamda) / lamda;
         int j = (int) (nindex * rdn);

@@ -137,6 +137,7 @@ public class Ulam {
                 }
                 if (z > 2.0 / 3.0 || z < 1.0 / 3.0) {
                     lamdarun = (lamdarun * 9.0 + p) / 10.0;
+                    
                     // System.out.println(nor+" "+nol+" "+n+" "+a0+" "+z+" "+p+" "+lamdarun);
                    
                           //  (kk3 / a0) + " " + (kk4 / a0) + " " + (kk5 / a0));

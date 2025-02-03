@@ -72,6 +72,7 @@ public class Ulam {
                         }
                     }
                     j--;
+                    
                     aj = getUlam(j);
                 }
                 more = false;

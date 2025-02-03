@@ -272,6 +272,7 @@ public class Ulam {
     }
 
     public static void setUlam(long a0, int n) {
+        
         long i30 = 30;
         int m30 = (int) (a0 % i30);
         int d30 = (int) (a0 / i30);
